@@ -1,2 +1,3 @@
 # js-express-typeorm
-TypeORM 기본 사용법 정리
+
+TypeORM-ES6 기본 문법 정리 in ExpressJS
