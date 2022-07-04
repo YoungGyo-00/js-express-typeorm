@@ -1,13 +1,19 @@
-import express, { Request, Response, NextFunction } from "express";
+import express, { Application, Request, Response, NextFunction } from "express";
 
-const app = express();
+class App {
+    public app: Application;
 
-app.set("port", 8080);
+    constructor() {
+        this.app = express();
+        this.getRouter();
+    }
 
-app.get("/", (req, res: Response, next: NextFunction) => {
-    res.send("connect");
-});
+    getRouter() {
+        this.app.set("port", 8080);
+        this.app.get("/", (req: Request, res: Response, next: NextFunction) => {
+            res.send("connect");
+        });
+    }
+}
 
-app.listen(app.get("port"), () => {
-    console.log(app.get("port") + "연결 성공");
-});
+export default new App().app;
