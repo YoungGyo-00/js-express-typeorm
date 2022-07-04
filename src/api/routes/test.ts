@@ -1,18 +1,22 @@
 import express, { Router, Request, Response, NextFunction } from "express";
+import { getCustomRepository } from "typeorm";
+import { UserRepository } from "../../repository/testRepository";
 
 class testRouter {
     public router: Router = express.Router();
+    public userRepository: UserRepository;
 
     constructor() {
         this.router;
-        this.get();
+        this.userRepository = getCustomRepository(UserRepository);
+        this.post();
     }
 
-    get() {
-        this.router.get(
+    post() {
+        this.router.post(
             "/",
             (req: Request, res: Response, next: NextFunction) => {
-                res.send("test");
+                this.userRepository.createAndSave("test", "test");
             },
         );
     }

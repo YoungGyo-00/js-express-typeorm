@@ -22,7 +22,6 @@ class ApiRouter {
             })
             .forEach(async file => {
                 const cur_basename: string = file.split(".")[0];
-                console.log(cur_basename);
 
                 this.router.use(
                     "/api/" + cur_basename,
