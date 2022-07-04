@@ -1,4 +1,5 @@
 import express, { Application, Request, Response, NextFunction } from "express";
+import ApiController from "./api/routes/index";
 
 class App {
     public app: Application;
@@ -10,9 +11,7 @@ class App {
 
     getRouter() {
         this.app.set("port", 8080);
-        this.app.get("/", (req: Request, res: Response, next: NextFunction) => {
-            res.send("connect");
-        });
+        this.app.use(ApiController);
     }
 }
 

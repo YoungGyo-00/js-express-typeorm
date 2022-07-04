@@ -1,17 +1,8 @@
 import path from "path";
 import * as dotenv from "dotenv";
-dotenv.config({ path: __dirname + "/.env" });
+dotenv.config({ path: "src/.env" });
 
-const {
-    _USERNAME,
-    PASSWORD,
-    DATABASE,
-    DATABASE_PRODUTION,
-    DATABASE_TEST,
-    HOST,
-    TYPE,
-    PORT,
-} = process.env;
+const { _USERNAME, PASSWORD, DATABASE, HOST, TYPE, PORT } = process.env;
 
 const development = {
     type: TYPE,
@@ -23,7 +14,7 @@ const development = {
     synchronize: true,
     logging: true,
     dropSchema: false,
-    // entities: [path.join(__dirname, "..", "entities", "*.ts")],
+    entities: [path.join(__dirname, "..", "entities", "*.ts")],
 };
 
 const production = {};

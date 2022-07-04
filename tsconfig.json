@@ -1,6 +1,5 @@
 {
     "compilerOptions": {
-        "experimentalDecorators": true,
         "target": "es6",
         "module": "CommonJS",
         "outDir": "./dist",
@@ -9,7 +8,9 @@
         "strictPropertyInitialization": false,
         "moduleResolution": "node",
         "noImplicitAny": false,
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
     },
     "exclude": ["node_modules"]
 }
