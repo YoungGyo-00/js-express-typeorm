@@ -1,10 +1,12 @@
 {
     "compilerOptions": {
+        "experimentalDecorators": true,
         "target": "es6",
         "module": "CommonJS",
         "outDir": "./dist",
         "rootDir": ".",
         "strict": true,
+        "strictPropertyInitialization": false,
         "moduleResolution": "node",
         "noImplicitAny": false,
         "esModuleInterop": true

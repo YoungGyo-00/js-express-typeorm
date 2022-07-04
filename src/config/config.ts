@@ -1,9 +1,9 @@
 import path from "path";
-import dotenv from "dotenv";
-dotenv.config();
+import * as dotenv from "dotenv";
+dotenv.config({ path: __dirname + "/.env" });
 
 const {
-    USERNAME,
+    _USERNAME,
     PASSWORD,
     DATABASE,
     DATABASE_PRODUTION,
@@ -17,13 +17,13 @@ const development = {
     type: TYPE,
     host: HOST,
     port: PORT,
-    username: USERNAME,
+    username: _USERNAME,
     password: PASSWORD,
     database: DATABASE,
     synchronize: true,
     logging: true,
     dropSchema: false,
-    entities: [path.join(__dirname, "..", "entities", "*.ts")],
+    // entities: [path.join(__dirname, "..", "entities", "*.ts")],
 };
 
 const production = {};

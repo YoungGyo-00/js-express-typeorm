@@ -1,7 +1,8 @@
 import app from "../app";
 import { createConnection } from "typeorm";
+import connectionOptions from "../config/ormconfig";
 
-createConnection()
+createConnection(connectionOptions)
     .then(() => {
         console.log("DB Connection");
     })
