@@ -14,7 +14,7 @@ const development = {
     synchronize: true,
     logging: true,
     dropSchema: false,
-    entities: [path.join(__dirname, "..", "entities", "*.ts")],
+    entities: [path.join(__dirname, "..", "entities", "**", "*.ts")],
 };
 
 const production = {};

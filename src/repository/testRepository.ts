@@ -7,6 +7,7 @@ export class UserRepository extends Repository<User> {
         const user = new User();
         user.firstName = firstName;
         user.lastName = lastName;
+        console.log("여기면 성공");
         return this.manager.save(user);
     }
 }
