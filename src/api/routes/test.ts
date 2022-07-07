@@ -1,15 +1,14 @@
 import express, { Router, Request, Response, NextFunction } from "express";
-import { getCustomRepository, getRepository } from "typeorm";
-import { UserRepository } from "../../repository/testRepository";
-import { User } from "../../entities/user";
+import { getCustomRepository } from "typeorm";
+import { UserRepository } from "../../repository/userRepository";
 
 class testRouter {
     public router: Router = express.Router();
-    public userRepository: any;
+    public userRepository: UserRepository;
 
     constructor() {
         this.router;
-        this.userRepository = getRepository(User);
+        this.userRepository = getCustomRepository(UserRepository);
         this.post();
     }
 
@@ -17,11 +16,7 @@ class testRouter {
         this.router.post(
             "/",
             async (req: Request, res: Response, next: NextFunction) => {
-                const user: User = new User();
-
-                user.firstName = "test";
-                user.lastName = "test";
-                await this.userRepository.save(user);
+                await this.userRepository.createAndSave("test", "test");
             },
         );
     }

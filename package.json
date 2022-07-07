@@ -22,7 +22,7 @@
         "mysql2": "^2.3.3",
         "path": "^0.12.7",
         "reflect-metadata": "^0.1.13",
-        "typeorm": "^0.3.7",
+        "typeorm": "^0.2.45",
         "typeorm-naming-strategies": "^4.1.0"
     },
     "devDependencies": {

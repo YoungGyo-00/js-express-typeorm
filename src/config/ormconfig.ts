@@ -5,6 +5,5 @@ import "reflect-metadata";
 const env: string = process.env.NODE_ENV || "development";
 
 const connectionOptions: ConnectionOptions = configs[env];
-console.log(connectionOptions);
 
 export default connectionOptions;
