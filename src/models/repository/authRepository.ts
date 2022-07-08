@@ -1,5 +1,7 @@
+import { Service } from "typedi";
 import User from "../entities/user";
 
+@Service()
 class AuthRepository {
     async signup(): Promise<string> {
         try {
