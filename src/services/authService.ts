@@ -6,7 +6,11 @@ class UserService {
     constructor(private authRepository: AuthRepository) {}
 
     signup() {
-        return this.authRepository.signup();
+        const user = new User();
+        user.firstName = "test";
+        user.lastName = "test";
+
+        return this.authRepository.signup(user);
     }
 }
 
