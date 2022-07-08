@@ -2,7 +2,7 @@ import express, { Router } from "express";
 import { isNotLoggedIn } from "../middlewares/index";
 import { AuthController } from "../../controllers/authContoller";
 
-class UserRouter {
+class AuthRouter {
     public router: Router = express.Router();
 
     constructor() {
@@ -11,8 +11,8 @@ class UserRouter {
     }
 
     post() {
-        this.router.post("/signup", isNotLoggedIn, AuthController.signup);
+        this.router.post("/signup", AuthController.signup);
     }
 }
 
-export default new UserRouter().router;
+export default new AuthRouter().router;

@@ -1,22 +1,16 @@
 import User from "../entities/user";
 
 class AuthRepository {
-    async signup(): Promise<Mutation<User>> {
+    async signup(): Promise<string> {
         try {
             const user = new User();
             user.firstName = "test";
             user.lastName = "test";
 
             const result = await User.save(user);
-            return {
-                success: true,
-                result,
-            };
+            return "성공";
         } catch (err) {
-            return {
-                success: false,
-                error: err,
-            };
+            return "실패";
         }
     }
 }

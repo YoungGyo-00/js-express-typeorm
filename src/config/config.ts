@@ -14,7 +14,9 @@ const development = {
     synchronize: true,
     logging: true,
     dropSchema: false,
-    entities: [path.join(__dirname, "..", "entities", "**", "*{.js,.ts}")],
+    entities: [
+        path.join(__dirname, "..", "models", "entities", "**", "*{.js,.ts}"),
+    ],
 };
 
 const production = {};

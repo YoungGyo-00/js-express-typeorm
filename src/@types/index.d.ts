@@ -2,5 +2,5 @@
 import { ErrorSafety } from "./return";
 
 declare global {
-    export interface Mutation<T = any> extends ErrorSafety<T> {}
+    export interface Mutation<T> extends ErrorSafety<T> {}
 }

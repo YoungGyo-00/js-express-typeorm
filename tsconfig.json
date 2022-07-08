@@ -10,8 +10,7 @@
         "noImplicitAny": false,
         "esModuleInterop": true,
         "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
-        "typeRoots": ["./node_modules/@types", "./src/@types/project"]
+        "emitDecoratorMetadata": true
     },
     "exclude": ["node_modules"]
 }
