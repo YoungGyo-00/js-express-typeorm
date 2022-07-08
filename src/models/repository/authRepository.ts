@@ -3,12 +3,18 @@ import User from "../entities/user";
 
 @Service()
 class AuthRepository {
-    async signup(user: User): Promise<string> {
+    async signup(user: User): Promise<Mutation<User>> {
         try {
             const result = await User.save(user);
-            return "성공";
+            return {
+                success: true,
+                result,
+            };
         } catch (err) {
-            return "실패";
+            return {
+                success: false,
+                error: err,
+            };
         }
     }
 }
